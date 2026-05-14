@@ -16,16 +16,21 @@ btn.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('nav a');
-
-    navLinks.forEach(link => {
+    document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
 
             if (targetId.startsWith('#')) {
-                setTimeout(() => {
+                e.preventDefault();
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
                     history.replaceState(null, null, window.location.pathname);
-                }, 0); 
+                }
             }
         });
     });
