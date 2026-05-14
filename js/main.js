@@ -16,22 +16,28 @@ btn.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('nav a').forEach(link => {
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
+            const href = this.getAttribute('href');
 
-            if (targetId.startsWith('#')) {
+            if (href && href.startsWith('#')) {
                 e.preventDefault();
+                e.stopImmediatePropagation();
 
-                const targetElement = document.querySelector(targetId);
+                const targetElement = document.querySelector(href);
+                
                 if (targetElement) {
                     targetElement.scrollIntoView({
                         behavior: 'smooth'
                     });
 
-                    history.replaceState(null, null, window.location.pathname);
+                    if (window.location.hash !== "") {
+                         history.replaceState(null, null, window.location.pathname);
+                    }
                 }
             }
-        });
+        }, { passive: false });
     });
 });
