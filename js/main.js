@@ -14,3 +14,19 @@ btn.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+
+            if (targetId.startsWith('#')) {
+                setTimeout(() => {
+                    history.replaceState(null, null, window.location.pathname);
+                }, 0); 
+            }
+        });
+    });
+});
