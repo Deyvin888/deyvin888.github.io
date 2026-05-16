@@ -67,3 +67,16 @@ main {
     font-style: normal;
     font-optical-sizing: auto;
 }
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-group {
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+        font-size: 16px;
+    }
+}
