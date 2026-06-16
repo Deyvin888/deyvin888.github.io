@@ -41,3 +41,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: false });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const stack = document.getElementById("projectStack");
+  
+  if (!stack) return;
+
+  const cards = Array.from(stack.children);
+
+  function renderStack() {
+    cards.forEach((card, index) => {
+      const depth = index;
+      
+      const translateY = depth * -10;
+      const translateX = depth * -22;
+      const scale = 1 - depth * 0.03;
+      
+      card.style.transform = `translateY(${translateY}px) translateX(${translateX}px) scale(${scale})`;
+      card.style.zIndex = cards.length - depth;
+      card.style.opacity = depth >= 3 ? "0" : "1"; 
+    });
+  }
+
+  stack.addEventListener("click", () => {
+    if (cards.length <= 1) return;
+
+    const topCard = cards.shift();
+    
+    topCard.style.transform = `translateX(140%) scale(0.95)`;
+    topCard.style.opacity = "0";
+
+    setTimeout(() => {
+      cards.push(topCard);
+      stack.appendChild(topCard);
+      renderStack();
+    }, 350);
+  });
+
+  renderStack();
+});
