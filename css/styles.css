@@ -96,13 +96,13 @@ section:nth-child(odd) {
 }
 
 :root {
-  --hero-bg: #0f172a;
-  --hero-text: #f8fafc;
-  --hero-muted: #94a3b8;
-  --hero-primary: #3b82f6;
-  --hero-primary-hover: #2563eb;
-  --hero-card-bg: #1e293b;
-  --hero-border: #334155;
+  --hero-bg: #ffffff;           
+  --hero-text: #1d1d1f;           
+  --hero-muted: #86868b;          
+  --hero-primary: #0071e3;      
+  --hero-primary-hover: #0077ed;     
+  --hero-card-bg: #f5f5f7;         
+  --hero-border: #d2d2d7;          
 }
 
 .hero {
@@ -134,13 +134,13 @@ section:nth-child(odd) {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  letter-spacing: -0.03em; /* Crisp tracking style */
+  text-transform: none;    /* Changed from uppercase to match Apple's modern editorial style */
 }
 
 .hero-title .highlight {
   color: var(--hero-primary);
-  display: block;
+  display: inline;         /* Allows it to flow cleanly inline with "Hello, I'm" */
 }
 
 .hero-buttons {
@@ -149,10 +149,10 @@ section:nth-child(odd) {
 }
 
 .hero-buttons .btn {
-  padding: 0.85rem 2rem;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 6px;
+  padding: 0.8rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 30px;    /* Clean, pill-shaped Apple design */
   text-decoration: none;
   text-align: center;
   transition: all 0.2s ease-in-out;
@@ -170,12 +170,12 @@ section:nth-child(odd) {
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--hero-text) !important;
-  border: 2px solid var(--hero-border);
+  color: var(--hero-primary) !important; /* Secondary links use blue text in Apple's design language */
+  border: none;                          /* Removed harsh border */
 }
 
 .btn-secondary:hover {
-  background-color: var(--hero-border);
+  text-decoration: underline;            /* Hover underline effect */
 }
 
 .hero-tagline {
@@ -215,28 +215,30 @@ section:nth-child(odd) {
   width: 100%;
   height: 100%;
   background-color: var(--hero-card-bg);
-  border: 1px solid var(--hero-border);
-  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Extremely soft border overlay */
+  border-radius: 20px;                  /* Softer rounded layout corners */
   padding: 2.2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  /* Premium, diffuse depth shadow */
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08), 
+              0 5px 15px -5px rgba(0, 0, 0, 0.04);
   user-select: none;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), z-index 0.4s ease, opacity 0.4s ease;
 }
 
 .card-badge {
   align-self: flex-start;
-  background: rgba(59, 130, 246, 0.15);
+  background: #ffffff;                 /* Stands out cleanly against the soft grey card background */
   color: var(--hero-primary);
+  border: 1px solid var(--hero-border);
   padding: 0.3rem 0.8rem;
   border-radius: 30px;
   font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .project-card h3 {
@@ -244,6 +246,7 @@ section:nth-child(odd) {
   font-weight: 700;
   margin-top: 1rem;
   color: var(--hero-text);
+  letter-spacing: -0.02em;
 }
 
 .project-card p {
@@ -262,16 +265,16 @@ section:nth-child(odd) {
 }
 
 .btn-view-all {
-  color: var(--hero-text);
+  color: var(--hero-primary);          /* Primary blue link formatting */
   font-size: 1rem;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  transition: color 0.2s ease;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
 .btn-view-all:hover {
-  color: var(--hero-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 @media (max-width: 900px) {
