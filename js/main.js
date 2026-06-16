@@ -42,9 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+function initProjectStack() {
   const stack = document.getElementById("projectStack");
-  
   if (!stack) return;
 
   const cards = Array.from(stack.children);
@@ -66,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   stack.addEventListener("click", () => {
     if (cards.length <= 1) return;
 
-    const topCard = cards.shift();
+    const topCard = cards.shift(); // Pull top card out of the array
     
     topCard.style.transform = `translateX(140%) scale(0.95)`;
     topCard.style.opacity = "0";
@@ -79,4 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   renderStack();
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initProjectStack);
+} else {
+  initProjectStack();
+}
