@@ -65,7 +65,7 @@ function initProjectStack() {
   stack.addEventListener("click", () => {
     if (cards.length <= 1) return;
 
-    const topCard = cards.shift(); // Pull top card out of the array
+    const topCard = cards.shift();
     
     topCard.style.transform = `translateX(140%) scale(0.95)`;
     topCard.style.opacity = "0";

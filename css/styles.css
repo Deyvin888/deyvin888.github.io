@@ -152,7 +152,7 @@ section:nth-child(odd) {
   padding: 0.8rem 1.8rem;
   font-size: 0.95rem;
   font-weight: 500;
-  border-radius: 30px;    /* Clean, pill-shaped Apple design */
+  border-radius: 30px;
   text-decoration: none;
   text-align: center;
   transition: all 0.2s ease-in-out;
@@ -161,7 +161,7 @@ section:nth-child(odd) {
 .btn-primary {
   background-color: var(--hero-primary);
   color: #ffffff !important;
-  border: none;
+  border: 1px solid transparent;
 }
 
 .btn-primary:hover {
@@ -170,12 +170,13 @@ section:nth-child(odd) {
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--hero-primary) !important; /* Secondary links use blue text in Apple's design language */
-  border: none;                          /* Removed harsh border */
+  color: var(--hero-text) !important;
+  border: 1px solid var(--hero-border);
 }
 
 .btn-secondary:hover {
-  text-decoration: underline;            /* Hover underline effect */
+  background-color: #f5f5f7;
+  text-decoration: none;
 }
 
 .hero-tagline {
@@ -265,7 +266,7 @@ section:nth-child(odd) {
 }
 
 .btn-view-all {
-  color: var(--hero-primary);          /* Primary blue link formatting */
+  color: var(--hero-primary);
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
