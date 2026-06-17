@@ -297,19 +297,23 @@ section:nth-child(odd) {
 @media (max-width: 900px) {
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 4.5rem;
+    gap: 2.5rem;
   }
+  
   .hero-left {
     align-items: center;
     text-align: center;
   }
+  
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
+  
   .hero-buttons {
     justify-content: center;
   }
+  
   .hero-right {
-    order: -1;
+    display: none;
   }
 }
