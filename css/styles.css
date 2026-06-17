@@ -134,13 +134,13 @@ section:nth-child(odd) {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.03em; /* Crisp tracking style */
-  text-transform: none;    /* Changed from uppercase to match Apple's modern editorial style */
+  letter-spacing: -0.03em;
+  text-transform: none;   
 }
 
 .hero-title .highlight {
   color: var(--hero-primary);
-  display: inline;         /* Allows it to flow cleanly inline with "Hello, I'm" */
+  display: inline;  
 }
 
 .hero-buttons {
@@ -195,14 +195,17 @@ section:nth-child(odd) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.5rem;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
 }
 
 .stack-container {
   position: relative;
-  width: 320px;
-  height: 400px;
+  width: 290px;
+  height: 360px;
   perspective: 1000px;
+  margin: 0 auto !important;
 }
 
 .project-stack {
@@ -216,14 +219,13 @@ section:nth-child(odd) {
   width: 100%;
   height: 100%;
   background-color: var(--hero-card-bg);
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Extremely soft border overlay */
-  border-radius: 20px;                  /* Softer rounded layout corners */
-  padding: 2.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;                
+  padding: 1.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  /* Premium, diffuse depth shadow */
   box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08), 
               0 5px 15px -5px rgba(0, 0, 0, 0.04);
   user-select: none;
@@ -232,7 +234,7 @@ section:nth-child(odd) {
 
 .card-badge {
   align-self: flex-start;
-  background: #ffffff;                 /* Stands out cleanly against the soft grey card background */
+  background: #ffffff;                
   color: var(--hero-primary);
   border: 1px solid var(--hero-border);
   padding: 0.3rem 0.8rem;
@@ -266,11 +268,19 @@ section:nth-child(odd) {
 }
 
 .btn-view-all {
+  display: block;
+  width: fit-content;
+  margin: 1rem auto 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
   color: var(--hero-primary);
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   transition: opacity 0.2s ease;
+  margin-top: 1rem;
+  transform: translateX(29px);
 }
 
 .btn-view-all:hover {
