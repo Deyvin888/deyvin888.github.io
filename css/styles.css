@@ -202,7 +202,7 @@ section:nth-child(odd) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 4.8rem;
   width: 100%;
 }
 
@@ -286,7 +286,7 @@ section:nth-child(odd) {
   text-decoration: none;
   transition: opacity 0.2s ease;
   margin-top: 1rem;
-  transform: translateX(29px);
+  transform: translateX(26px);
 }
 
 .btn-view-all:hover {
@@ -315,5 +315,119 @@ section:nth-child(odd) {
   
   .hero-right {
     display: none;
+  }
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  color: var(--hero-muted);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  line-height: 1.5;
+}
+
+.contact-form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 650px;
+  background-color: var(--hero-bg);
+  border: 1px solid var(--hero-border);
+  border-radius: 20px; 
+  padding: 2.5rem;
+  text-align: left;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--hero-text);
+}
+
+.form-group input,
+.form-group textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  color: var(--hero-text);
+  background-color: #ffffff;
+  border: 1px solid var(--hero-border);
+  border-radius: 8px;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--hero-primary);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-submit {
+  align-self: flex-start;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.alternative-contact {
+  margin-top: 2.5rem;
+  font-size: 0.95rem;
+  color: var(--hero-muted);
+}
+
+.contact-link {
+  color: var(--hero-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .btn-submit {
+    width: 100%;
   }
 }
