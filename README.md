@@ -28,6 +28,10 @@ Rather than using a website builder, I chose to develop the site myself to impro
 
 I'm continuously improving the website by experimenting with new features and refining the design.
 
+Refining the design will include updating the navigation bar, fix the errors with centering text with the bullet points and to adjust the section boxes to fill the user's devices screen accordingly. 
+
+New features will include a dark/light mode toggle, provide a downloadable CV button file and live GitHub activity contributions embedded to the website. 
+
 ## License
 
 This project is licensed under the MIT License.
