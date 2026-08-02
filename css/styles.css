@@ -21,8 +21,21 @@ main {
 
 section {
   padding: 100px 20px; 
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto; 
+}
+
+/* centers the actual bullets */
+.centered-bullets {
+  display: inline-block;
+  text-align: left;
+  margin: 0%;
+}
+
+/* shortens space between paragraphs */
+#links p.compact-p {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 section:nth-child(even) {
