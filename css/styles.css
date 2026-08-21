@@ -100,6 +100,24 @@ section:nth-child(odd) {
     font-style: normal;
     font-optical-sizing: auto;
 }
+
+.nav-group a {
+    text-decoration: none;
+    color: #0000EE
+}
+
+.nav-group a:visited {
+    color: inherit;
+}
+
+.nav-group a:hover {
+    text-decoration: none;
+}
+
+.nav-group a:active {
+    color: black;
+}
+
 @media (max-width: 768px) {
     .nav-bar {
         flex-direction: column;
