@@ -69,66 +69,95 @@ section:nth-child(odd) {
   pointer-events: none;
 }
 
+/* --- MODERN APPLE-STYLE NAV BAR --- */
 .nav-bar {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    background-color: rgba(255, 255, 255, 0.72);
+    /* Apple's signature blur includes saturation to keep colors underneath vibrant */
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    font-size: 20px;
+    padding: 0 2rem;
+    height: 3.5rem; /* Fixed height for a sleek profile */
     font-family: "DM Sans", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    font-optical-sizing: auto;
-    border-color: #E5E5E5;
-    border-style: solid;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Ultra-light bottom border only */
 }
 
+/* Brand Name (Left) */
+.nav-brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--hero-text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: opacity 0.2s ease;
+}
+
+.nav-brand:hover {
+    opacity: 0.7;
+}
+
+/* center Links */
 .nav-group {
-    box-sizing: border-box;
     display: flex;
-    gap: 20px;
-    font-size: 20px;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-optical-sizing: auto;
+    gap: 2.2rem;
+    align-items: center;
 }
 
 .nav-group a {
     text-decoration: none;
-    color: #0000EE
-}
-
-.nav-group a:visited {
-    color: inherit;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
 }
 
 .nav-group a:hover {
+    color: var(--hero-primary);
+}
+
+/* contact button (right) */
+.nav-cta {
+    background-color: var(--hero-primary);
+    color: #ffffff !important;
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
 }
 
-.nav-group a:active {
-    color: black;
+.nav-cta:hover {
+    background-color: var(--hero-primary-hover);
+    transform: scale(1.03);
 }
 
+/* mobile responsiveness */
 @media (max-width: 768px) {
     .nav-bar {
+        height: auto;
+        padding: 1rem 1.5rem;
         flex-direction: column;
-        gap: 15px;
+        gap: 1.2rem;
     }
 
     .nav-group {
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
+    }
+    
+    .nav-cta {
         width: 100%;
-        gap: 15px;
-        font-size: 16px;
+        text-align: center;
+        box-sizing: border-box;
     }
 }
 
