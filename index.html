@@ -38,7 +38,13 @@
                 <a href="#links">Links</a>
             </div>
 
-            <a href="#contact" class="nav-cta">Contact</a>
+            <div class="nav-actions">
+                <label class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="toggle-track"></span>
+                </label>
+                <a href="#contact" class="nav-cta">Contact</a>
+            </div>
         </nav>
         
         <button id="backToTop" class="hidden">↑</button>
@@ -194,5 +200,31 @@
         </main>
 
         <script src="js/main.js"></script>
+        <script>
+            const themeSwitch = document.getElementById('theme-switch');
+    
+            // checks local storage for saved preference
+            const currentTheme = localStorage.getItem('theme');
+    
+            // checks system settings
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // applys the correct theme on load
+            if (currentTheme === 'dark' || (!currentTheme && systemPrefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeSwitch.checked = true;
+            }
+
+            // listens for the toggle switch click
+            themeSwitch.addEventListener('change', function(e) {
+                if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        </script>
     </body>
 </html>
