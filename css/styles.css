@@ -592,6 +592,7 @@ input:checked + .toggle-track:before {
   
   .hero-title {
     font-size: 2.8rem;
+    justify-content: center;
   }
   
   .hero-buttons {
@@ -603,6 +604,8 @@ input:checked + .toggle-track:before {
   }
 }
 
+/* Mobile view */
+
 @media (max-width: 768px) {
     .nav-bar {
         height: 4rem; /* Fixed top bar height */
@@ -610,6 +613,10 @@ input:checked + .toggle-track:before {
         flex-direction: row; 
         justify-content: space-between; 
         align-items: center;
+    }
+
+    section {
+      padding: 40px 45px;
     }
 
     .hamburger {
