@@ -619,6 +619,43 @@ input:checked + .toggle-track:before {
       padding: 40px 45px;
     }
 
+    .hero {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .hero-left {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* scale down title */
+  .hero-title {
+    font-size: 2.3rem;
+    text-align: center;
+  }
+
+  /* center and wrap the buttons nicely on mobile */
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 80%;
+    max-width: 280px;
+  }
+
+  .hero-tagline {
+    max-width: 100%;
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
+
     .hamburger {
         display: flex;
         order: 1; 
