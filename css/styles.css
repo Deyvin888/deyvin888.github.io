@@ -738,4 +738,4 @@ input:checked + .toggle-track:before {
       width: 100%;
       align-self: center;
     }
-}
+  }
